@@ -20,6 +20,13 @@ public class Main {
         B = Matrix.scalarMult(B, 3.2);
         B.print();
 
+        double m[][] = {{1,4}, {2,3}};
+        double n[][] = {{8,12}, {6,-5}};
+        Matrix M = new Matrix(m);
+        Matrix N = new Matrix(n);
+        Matrix D = Matrix.multiplyMatrix(M, N);
+        System.out.println("The matrix D contains:");
+        D.print();
 
 
 

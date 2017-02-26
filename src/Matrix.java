@@ -127,9 +127,30 @@ public class Matrix {
 
     static Matrix multiplyMatrix(Matrix a, Matrix b) {
         Matrix mult = new Matrix(a.numRows, b.numCols);
+        Matrix BTransposed = transpose(b);
         // Fill in code here
+        for (int i=0; i < a.numRows; i++) {
+            for (int j=0; j < b.numCols; j++) {
+                mult.data[i][j] = dot(a.data[i], BTransposed.data[j]);
+            }
+        }
         return mult;
 
     }
+
+    static double dot(double[] a, double[] b) {
+        int length = a.length;
+        double result = 0.0;
+        for (int i = 0; i < length; i++) {
+            double product = a[i]*b[i];
+            result += product;
+        }
+
+        return result;
+    }
+
+    // 1 2 3    2 4
+    // 4 5 6    6 10
+    // 7 8 9    16  18
 
 }
